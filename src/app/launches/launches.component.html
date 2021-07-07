@@ -1,0 +1,37 @@
+<h1>Launches</h1>
+
+<input class="Search" matInput placeholder="Search..." [formControl]="searchControl">
+
+<div class="Table_Container" *ngIf="data$ | async as elements">
+    <cdk-virtual-scroll-viewport [itemSize]="40" (scrolledIndexChange)="scrollTable()" class="Viewport_Container">
+        <table cellspacing="10">
+            <thead>
+                <tr>
+                    <th *ngFor="let header of displayColumns">{{ header }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *cdkVirtualFor="let element of elements; trackBy: trackByIndex" class="detail-row">
+                    <td>{{element.flight_number}}</td>
+                    <td>{{element.launch_date_local | date: 'mediumDate' }}</td>
+                    <td>{{element.rocket.rocket_name}}</td>
+                    <td>{{element.launch_site.site_name}}</td>
+                    <td>{{element.details}}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+        <div *ngIf="isFetching" class="Spinner_Container">
+            <app-spinner></app-spinner>
+        </div>
+
+        <div *ngIf="elements.length == 0" class="Notification">
+            <p>No results found.</p>
+        </div>
+
+        <div *ngIf="fetchDone" class="Notification">
+            <p>All results loaded.</p>
+        </div>
+      </cdk-virtual-scroll-viewport>
+      
+</div>

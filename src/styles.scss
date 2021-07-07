@@ -15,6 +15,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
   color: #333;
+  padding: 1rem;
 }
 
 img {
@@ -220,3 +221,6 @@ img {
 .max-reached {
   padding: 1rem 0;
 }
+
+html, body { height: auto; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

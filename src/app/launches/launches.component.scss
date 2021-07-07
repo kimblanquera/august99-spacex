@@ -1,0 +1,57 @@
+$borderColor: #eceff1;
+
+::ng-deep .Table_Container {
+    margin: 1rem 0 0 0;
+    overflow: auto;
+    padding: 1rem;
+    border: 1px solid $borderColor;
+    background: white;
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 1rem;
+        thead {
+            th {
+                border-collapse: collapse;
+                background: white;
+                padding: 1rem;
+                text-align: left;
+                border-bottom: 1px solid $borderColor;
+            }
+        }
+        td {
+            border-collapse: collapse;
+            padding: 1rem;
+            border-bottom: 1px solid $borderColor;
+            &:first-child {
+                width: 10%;
+            }
+            &:nth-child(n+2):not(:last-child) {
+                width: 15%;
+            }
+        }
+    }
+}
+
+.Search {
+    outline: none;
+    border: 1px solid $borderColor;
+    padding: 1rem;
+    min-width: 15rem;
+}
+
+.Viewport_Container {
+    min-height: 100%;
+    height: 600px;
+    width: 100%;
+}
+
+.Spinner_Container {
+    padding: 1rem 0;
+}
+
+.Notification {
+    font-weight: 700;
+    text-align: center;
+    padding: 1rem;
+}
