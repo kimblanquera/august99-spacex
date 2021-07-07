@@ -21,9 +21,7 @@ export class LaunchesComponent implements OnInit {
   fetchDone: boolean = false;
   fetchLimit: number = environment.fetchLimit;
   currentOffset: BehaviorSubject<number> = new BehaviorSubject<number>(0);
-  //displayColumns: string[] = ['flight_number', 'launch_date_local', 'rocket', 'launch_site', 'details'];
   displayColumns: string[] = ['Number', 'Date', 'Rocket', 'Launch Site', 'Details'];
-  items = Array.from({length: 100000}).map((_, i) => `Item #${i}`);
   searchControl: FormControl = new FormControl('');
   @ViewChild(CdkVirtualScrollViewport, {static: false}) viewport: CdkVirtualScrollViewport;
   
